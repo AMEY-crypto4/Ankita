@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ankita Pendem Achievements</title>
+<meta name="description" content="Certificates, presentations and awards of Ankita Pendem, research scholar in Chemistry, Wilson College, Mumbai. Each document can be viewed and downloaded.">
+<style>
+/* Layout: editor-style shell. Title bar, file-tab filters, a grid of document cards, and a viewer panel that opens over the page. */
+:root{
+  color-scheme: light;
+  --bg:#ffffff;
+  --side:#f3f3f3;
+  --tabbar:#ececec;
+  --line:#d4d4d4;
+  --fg:#3b3b3b;
+  --muted:#6e6e6e;
+  --blue:#0451a5;
+  --green:#1f7a4d;
+  --amber:#a15c00;
+  --blue-bg:#e8f0fa;
+  --green-bg:#e6f3ec;
+  --amber-bg:#fbefdc;
+  --ui:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:"Cascadia Code","Cascadia Mono",Consolas,"SF Mono",Menlo,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{height:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 var(--ui);min-height:100%;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:1180px;margin:0 auto}
+.titlebar{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font:12px var(--mono);color:var(--muted);flex-wrap:wrap}
+.dots{display:flex;gap:6px}
+.dots i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block}
+header{padding:36px 0 24px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end}
+h1{margin:0;font-size:clamp(28px,5vw,42px);line-height:1.1;font-weight:650;letter-spacing:-.015em;text-wrap:balance}
+h1 span{color:var(--blue)}
+.sub{margin:10px 0 0;color:var(--muted);max-width:60ch}
+.stats{display:flex;gap:0;border:1px solid var(--line);border-radius:4px;background:var(--side);font-family:var(--mono)}
+.stats div{padding:10px 16px;border-right:1px solid var(--line);min-width:0}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font-size:20px;font-weight:600;color:var(--fg);font-variant-numeric:tabular-nums}
+.stats small{font-size:11px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+
+.tabs{display:flex;background:var(--tabbar);border:1px solid var(--line);border-bottom:0;border-radius:4px 4px 0 0;overflow-x:auto;scrollbar-width:thin}
+.tab{appearance:none;border:0;border-right:1px solid var(--line);background:transparent;color:var(--muted);font:13px var(--mono);padding:11px 18px;cursor:pointer;white-space:nowrap;border-top:2px solid transparent;display:flex;gap:8px;align-items:center}
+.tab:hover{color:var(--fg);background:#e4e4e4}
+.tab[aria-selected="true"]{background:var(--bg);color:var(--fg);border-top-color:var(--blue);margin-bottom:-1px;padding-bottom:12px}
+.tab .n{font-size:11px;background:var(--line);color:var(--fg);border-radius:9px;padding:0 7px}
+.tab:focus-visible,.btn:focus-visible,.close:focus-visible,.nav:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+.panel{border:1px solid var(--line);border-radius:0 0 4px 4px;padding:20px;background:var(--bg)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:18px}
+.card{display:flex;flex-direction:column;min-width:0;border:1px solid var(--line);border-radius:4px;background:var(--bg)}
+.thumb{display:block;appearance:none;border:0;border-bottom:1px solid var(--line);background:var(--side);padding:14px;height:210px;cursor:pointer;width:100%}
+.thumb img{width:100%;height:100%;object-fit:contain;display:block;box-shadow:0 1px 4px rgba(0,0,0,.18);background:#fff}
+.thumb:hover img{box-shadow:0 2px 8px rgba(0,0,0,.28)}
+.body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1;min-width:0}
+.meta{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.chip{font:11px var(--mono);padding:1px 8px;border-radius:3px;letter-spacing:.02em}
+.c-pres{background:var(--blue-bg);color:var(--blue)}
+.c-course{background:var(--green-bg);color:var(--green)}
+.c-conf{background:var(--amber-bg);color:var(--amber)}
+.date{font:12px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.card h2{margin:0;font-size:16px;line-height:1.3;font-weight:620;text-wrap:balance;overflow-wrap:anywhere}
+.org{margin:0;color:var(--muted);font-size:13px}
+.detail{margin:0;font-size:13px;overflow-wrap:anywhere}
+.badge{align-self:flex-start;font:11px var(--mono);border:1px solid var(--amber);color:var(--amber);border-radius:3px;padding:0 7px;background:var(--amber-bg)}
+.actions{margin-top:auto;padding-top:6px;display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:13px var(--ui);text-decoration:none;border:1px solid var(--line);background:var(--bg);color:var(--fg);padding:6px 12px;border-radius:3px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;line-height:1.2}
+.btn:hover{background:var(--side)}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.primary:hover{background:#033f82}
+.empty{padding:40px 0;text-align:center;color:var(--muted)}
+
+/* viewer */
+.viewer{position:fixed;inset:0;z-index:20;background:rgba(30,30,30,.55);display:none;padding:max(12px,env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) max(12px,env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+.viewer.open{display:flex}
+.vbox{margin:auto;width:min(1100px,100%);height:100%;max-height:900px;background:var(--bg);border-radius:6px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.35)}
+.vbar{display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--tabbar);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.vname{font:13px var(--mono);flex:1;min-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vstage{flex:1;min-height:0;background:#d9d9d9;display:flex;align-items:center;justify-content:center;overflow:auto}
+.vstage img{max-width:100%;max-height:100%;object-fit:contain;display:block;background:#fff}
+.vstage iframe{width:100%;height:100%;border:0;background:#fff}
+.close,.nav{appearance:none;border:1px solid var(--line);background:var(--bg);width:32px;height:32px;border-radius:3px;cursor:pointer;font:16px var(--ui);color:var(--fg)}
+.close:hover,.nav:hover{background:var(--side)}
+footer{margin-top:24px;font:12px var(--mono);color:var(--muted)}
+@media (max-width:640px){
+  header{grid-template-columns:1fr}
+  .panel{padding:14px}
+  .thumb{height:190px}
+}
+@media (prefers-reduced-motion:no-preference){.card{transition:border-color .15s}.card:hover{border-color:#9a9a9a}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="titlebar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span>achievements / certificates</span></div>
+
+  <header>
+    <div>
+      <h1>Ankita Pendem <span>Achievements</span></h1>
+      <p class="sub">Research scholar in Chemistry, Wilson College, Mumbai. Papers presented, prizes, research courses and workshops, 2022 to 2026. Open any certificate to read it, or download the original file.</p>
+    </div>
+    <div class="stats" aria-label="Summary">
+      <div><b id="s-docs">0</b><small>Documents</small></div>
+      <div><b id="s-pres">0</b><small>Presented</small></div>
+      <div><b>2022–26</b><small>Span</small></div>
+    </div>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Filter certificates" id="tabs"></div>
+  <main class="panel" id="panel">
+    <div class="grid" id="grid"></div>
+  </main>
+  <footer>All certificates are the original files. Chromatography workshop certificate is a photograph, cropped and straightened.</footer>
+</div>
+
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Certificate viewer">
+  <div class="vbox">
+    <div class="vbar">
+      <button class="nav" id="prev" aria-label="Previous certificate">&#8249;</button>
+      <button class="nav" id="next" aria-label="Next certificate">&#8250;</button>
+      <span class="vname" id="vname"></span>
+      <a class="btn primary" id="vdl" download>Download</a>
+      <a class="btn" id="vopen" target="_blank" rel="noopener">Open in new tab</a>
+      <button class="close" id="vclose" aria-label="Close viewer">&#215;</button>
+    </div>
+    <div class="vstage" id="vstage"></div>
+  </div>
+</div>
+
+<script>
+var CATS = {
+  all:  {label:"All"},
+  pres: {label:"Presentations & awards", chip:"Presented", cls:"c-pres"},
+  course:{label:"Courses & FDPs", chip:"Course", cls:"c-course"},
+  conf: {label:"Workshops & conferences", chip:"Attended", cls:"c-conf"}
+};
+
+/* Chronological. "file" is what opens in the viewer; "extra" is a second download. */
+var ITEMS = [
+ {cat:"course", title:"Paraphrasing and Citations", org:"El Shaddai Academy", date:"25 Jun 2022", sort:"2022-06-25",
+  detail:"Faculty Development Programme. Interaction in the session graded 'A'.",
+  file:"certificates/paraphrasing-and-citations-fdp-2022.jpg", thumb:"thumbs/paraphrasing-and-citations-fdp-2022.jpg"},
+ {cat:"course", title:"Ethics in Research and Scientific Writing", org:"Jai Hind College (Autonomous) with Guru Angad Dev Teaching Learning Centre, University of Delhi", date:"12–18 Jul 2022", sort:"2022-07-18",
+  detail:"One-week national certificate programme under PMMMNMTT, Ministry of Education. Equivalent to 30 hours of course work.",
+  file:"certificates/ethics-in-research-and-scientific-writing-2022.pdf", thumb:"thumbs/ethics-in-research-and-scientific-writing-2022.jpg"},
+ {cat:"course", title:"Ethics in Research and Scientific Writing", badge:"Provisional certificate", org:"Guru Angad Dev Teaching Learning Centre, SGTB Khalsa College, University of Delhi", date:"18 Jul 2022", sort:"2022-07-18b",
+  detail:"Provisional certificate issued at the end of the programme, before the graded certificate.",
+  file:"certificates/ethics-in-research-provisional-certificate-2022.pdf", thumb:"thumbs/ethics-in-research-provisional-certificate-2022.jpg"},
+ {cat:"course", title:"Advanced Research Methodology", org:"Teaching Learning Centre, Ramanujan College, University of Delhi", date:"22 Sep – 6 Oct 2022", sort:"2022-10-06",
+  detail:"Two-week interdisciplinary refresher course under PMMMNMTT, Ministry of Education. Grade B+.",
+  file:"certificates/advanced-research-methodology-2022.pdf", thumb:"thumbs/advanced-research-methodology-2022.jpg"},
+ {cat:"course", title:"Research Methodology", org:"Patkar-Varde College, Goregaon, Mumbai", date:"29 Sep – 8 Oct 2022", sort:"2022-10-08",
+  detail:"RUSA sponsored, eight-day, four-credit online course approved by the University of Mumbai.",
+  file:"certificates/research-methodology-rusa-2022.pdf", thumb:"thumbs/research-methodology-rusa-2022.jpg"},
+ {cat:"pres", title:"Poster Presentation, NSCS-2022", org:"Thakur College of Science & Commerce, Mumbai", date:"23 Dec 2022", sort:"2022-12-23",
+  detail:"Synthesis of cauliflower like carbon by scalable bottom up approach towards rapid and efficient removal of organic cationic pollutant.",
+  file:"certificates/nscs-2022-poster-presentation.png", thumb:"thumbs/nscs-2022-poster-presentation.jpg",
+  extra:{label:"Download PDF", file:"certificates/nscs-2022-poster-presentation.pdf"}},
+ {cat:"conf", title:"Workshop on Chromatography and Spectroscopy", org:"Guru Nanak Institute of Research and Development, Guru Nanak Khalsa College, Matunga", date:"Aug 2023", sort:"2023-08-05",
+  detail:"Hands-on training on HPLC, HPTLC, UV-Vis spectrophotometer, GC and FTIR. Certificate dates the workshop 31st–5th August 2023. Credited with 2 points.",
+  file:"certificates/chromatography-spectroscopy-workshop-2023.png", thumb:"thumbs/chromatography-spectroscopy-workshop-2023.jpg"},
+ {cat:"pres", title:"National Convention of Chemistry Teachers (NCCT-2023)", badge:"Best Paper Presentation prize", org:"Association of Chemistry Teachers India, GUJCOST, Gujarat Science City, Ahmedabad", date:"27–29 Oct 2023", sort:"2023-10-29",
+  detail:"Presented a paper on the convention theme, Chemistry for Sustainable Development.",
+  file:"certificates/ncct-2023-best-paper-presentation.jpg", thumb:"thumbs/ncct-2023-best-paper-presentation.jpg"},
+ {cat:"pres", title:"Oral Presentation, INCSASE-2023", org:"Wilson College (Autonomous), Mumbai", date:"4–5 Dec 2023", sort:"2023-12-05",
+  detail:"Solid-state template free synthesis of flower shaped BiOCl decorated with green emissive carbon quantum dots as potential candidate for photocatalysis.",
+  file:"certificates/incsase-2023-oral-presentation.pdf", thumb:"thumbs/incsase-2023-oral-presentation.jpg"},
+ {cat:"pres", title:"Aavishkar 2023-24, Zonal Round", org:"University of Mumbai, Mumbai I zone", date:"9 Dec 2023", sort:"2023-12-09",
+  detail:"Waste paper derived yellow emissive CQDs decorated on BiOCl for boosting photocatalytic activity. Pure Sciences category, PPG level.",
+  file:"certificates/aavishkar-2023-24-zonal-round.pdf", thumb:"thumbs/aavishkar-2023-24-zonal-round.jpg"},
+ {cat:"course", title:"Exploring Use of AI Tools in Research", org:"Bal-Bharati's Maghanmal J. Pancholia College of Commerce", date:"30 Dec 2024 – 4 Jan 2025", sort:"2025-01-04",
+  detail:"One-week online National Level Faculty Development Program, with the Nucleus of Learning and Development.",
+  file:"certificates/ai-tools-in-research-fdp-2025.jpg", thumb:"thumbs/ai-tools-in-research-fdp-2025.jpg"},
+ {cat:"conf", title:"2nd International Conference on Climate Change, Sustainable Development & Smart Agriculture (ICSSA-2026)", org:"Kalinga University, Naya Raipur", date:"12–13 Mar 2026", sort:"2026-03-13",
+  detail:"Certificate of participation. Organised by the Department of Zoology, Faculty of Science.",
+  file:"certificates/icssa-2026-kalinga-university.jpg", thumb:"thumbs/icssa-2026-kalinga-university.jpg"}
+];
+ITEMS.sort(function(a,b){return a.sort<b.sort?-1:a.sort>b.sort?1:0});
+
+var current = "all", shown = [], viewIdx = -1;
+var $ = function(id){return document.getElementById(id)};
+
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function isPdf(f){return /\.pdf$/i.test(f)}
+function fname(f){return f.split("/").pop()}
+
+function renderTabs(){
+  var h="";
+  Object.keys(CATS).forEach(function(k){
+    var n = k==="all" ? ITEMS.length : ITEMS.filter(function(i){return i.cat===k}).length;
+    h += '<button class="tab" role="tab" data-cat="'+k+'" aria-selected="'+(k===current)+'">'+esc(CATS[k].label)+'<span class="n">'+n+'</span></button>';
+  });
+  $("tabs").innerHTML = h;
+}
+
+function renderGrid(){
+  shown = ITEMS.filter(function(i){return current==="all"||i.cat===current});
+  if(!shown.length){ $("grid").innerHTML='<div class="empty">No documents in this group.</div>'; return; }
+  $("grid").innerHTML = shown.map(function(it,idx){
+    var c = CATS[it.cat];
+    return '<article class="card">'+
+      '<button class="thumb" data-view="'+idx+'" aria-label="View '+esc(it.title)+'"><img src="'+it.thumb+'" alt="Preview of certificate: '+esc(it.title)+'" loading="lazy"></button>'+
+      '<div class="body">'+
+        '<div class="meta"><span class="chip '+c.cls+'">'+c.chip+'</span><span class="date">'+esc(it.date)+'</span></div>'+
+        '<h2>'+esc(it.title)+'</h2>'+
+        (it.badge?'<span class="badge">'+esc(it.badge)+'</span>':'')+
+        '<p class="org">'+esc(it.org)+'</p>'+
+        '<p class="detail">'+esc(it.detail)+'</p>'+
+        '<div class="actions">'+
+          '<button class="btn primary" data-view="'+idx+'">View</button>'+
+          '<a class="btn" href="'+it.file+'" download="'+fname(it.file)+'">Download</a>'+
+          (it.extra?'<a class="btn" href="'+it.extra.file+'" download="'+fname(it.extra.file)+'">'+esc(it.extra.label)+'</a>':'')+
+        '</div>'+
+      '</div></article>';
+  }).join("");
+}
+
+function openViewer(idx){
+  viewIdx = idx; var it = shown[idx];
+  $("vname").textContent = it.title + " · " + it.date;
+  $("vdl").href = it.file; $("vdl").setAttribute("download", fname(it.file));
+  $("vopen").href = it.file;
+  $("vstage").innerHTML = isPdf(it.file)
+    ? '<iframe src="'+it.file+'#view=FitH" title="'+esc(it.title)+'"></iframe>'
+    : '<img src="'+it.file+'" alt="'+esc(it.title)+'">';
+  $("viewer").classList.add("open");
+  document.body.style.overflow="hidden";
+  $("vclose").focus();
+}
+function closeViewer(){
+  $("viewer").classList.remove("open"); $("vstage").innerHTML=""; document.body.style.overflow="";
+}
+function step(d){ if(viewIdx<0) return; openViewer((viewIdx+d+shown.length)%shown.length); }
+
+document.addEventListener("click",function(e){
+  var t = e.target.closest("[data-cat]"); if(t){ current=t.getAttribute("data-cat"); renderTabs(); renderGrid(); return; }
+  var v = e.target.closest("[data-view]"); if(v){ openViewer(parseInt(v.getAttribute("data-view"),10)); return; }
+  if(e.target===$("viewer")) closeViewer();
+});
+$("vclose").addEventListener("click",closeViewer);
+$("prev").addEventListener("click",function(){step(-1)});
+$("next").addEventListener("click",function(){step(1)});
+document.addEventListener("keydown",function(e){
+  if(!$("viewer").classList.contains("open")) return;
+  if(e.key==="Escape") closeViewer();
+  if(e.key==="ArrowLeft") step(-1);
+  if(e.key==="ArrowRight") step(1);
+});
+
+$("s-docs").textContent = ITEMS.length;
+$("s-pres").textContent = ITEMS.filter(function(i){return i.cat==="pres"}).length;
+renderTabs(); renderGrid();
+</script>
+</body>
+</html>
